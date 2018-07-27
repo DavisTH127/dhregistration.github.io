@@ -11,6 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
   </head>
   <body>
@@ -165,7 +166,7 @@
       <div class="invalid-feedback">You must agree before submitting</div>
     </div>
   </div>
-  <div class="g-recaptcha" id="rcaptcha"  data-sitekey="site key"></div><br>
+  <div class="g-recaptcha" id="rcaptcha"  data-sitekey="6Lcir2YUAAAAAOlxIej3PDth9BrFuhttbL9dog5r"></div><br>
   <span id="captcha" style="color:red" /></span> <!-- this will show captcha errors -->
   <p align="center">
   <button class="" type="submit">Submit form</button>
@@ -230,9 +231,7 @@
   }, false);
 })();
 </script>
-<script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
-
 function get_action(form) 
 {
     var v = grecaptcha.getResponse();
