@@ -11,14 +11,46 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
   </head>
   <body>
-    <h1 align= "center">CSC 642 Summer 2018 Individual Assignment Davis Hoang</h1>
-    <h1 align= "center">Registration Form</h1><br/> 
-
-    <?php
-    echo "Hello World!";
-    ?>
-
+    <h1 align= "center">Result verification page Davis Hoang</h1><br/>
+    <h3 align="center">First Name: Davis</h3>
+    <h3 align="center">Last Name: Hoang</h3>
+    <h3 align="center">Address: 355 Serrano Dr</h3>
+    <h3 align="center">City: San Francisco</h3>
+    <h3 align="center">State: California</h3>
+    <h3 align="center">Zip: 94132</h3>
+    <h3 align="center">Education: College</h3>
+    <h3 align="center">Income: (480)577-7458</h3>
+    <h3 align="center">Email: davis.hoang2011@yahoo.com</h3>
+    
+<div id="map"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: 37.718, lng: -122.481};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB84V7jkd8tAp14Ujtb1ldo0vnG7Y9VENg&callback=initMap">
+    </script>
   </body>
 </html>
