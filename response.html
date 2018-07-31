@@ -1,56 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <title>REGISTRATION_FORM</title>
+<head>
+    <title>Results Verification Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="newregform.css">
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-       /* Set the size of the div element that contains the map */
-      #map {
-        height: 400px;  /* The height is 400 pixels */
-        width: 100%;  /* The width is the width of the web page */
-       }
+        #map {
+            height: 400px;
+            width: 100%;
+            vertical-align: center;
+        }
     </style>
-  </head>
-  <body>
-    <h1 align= "center">Result verification page Davis Hoang</h1><br/>
-    <h3 align="center">First Name: Davis</h3>
-    <h3 align="center">Last Name: Hoang</h3>
-    <h3 align="center">Address: 355 Serrano Dr</h3>
-    <h3 align="center">City: San Francisco</h3>
-    <h3 align="center">State: California</h3>
-    <h3 align="center">Zip: 94132</h3>
-    <h3 align="center">Education: College</h3>
-    <h3 align="center">Income: (480)577-7458</h3>
-    <h3 align="center">Email: davis.hoang2011@yahoo.com</h3>
-    
-<div id="map"></div>
-    <script>
-// Initialize and add the map
-function initMap() {
-  // The location of Uluru
-  var uluru = {lat: 37.718, lng: -122.481};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
-}
-    </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB84V7jkd8tAp14Ujtb1ldo0vnG7Y9VENg&callback=initMap">
-    </script>
-  </body>
+</head>
+<body>
+    <div class="container" id="header" align="center">
+        <h1> Results verification page Davis Hoang</h1>
+    </div><hr><br>
+    <div class="row" align="center">
+        <div class="col-md-4"></div>
+            <h5>
+                First Name: <script> document.write(sessionStorage.getItem("fname"))</script>
+            </h5>
+        <div class="col-md-4">
+            <h5>
+                Last Name: <script> document.write(sessionStorage.getItem("lname"))</script> 
+            </h5>
+        </div>
+    </div>
+    <br><hr>
+    <div class="row">
+        <div class="col-md-5" align="center"></div>
+            <h5>
+                Address: <script> document.write(sessionStorage.getItem("address"))</script> 
+            </h5>
+    </div>
+    <br>
+    <div class="row" align="center">
+        <div class="col-md-3"></div>
+            <h5>
+                City: <script> document.write(sessionStorage.getItem("city"))</script> 
+            </h5>
+        <div class="col-md-3">
+            <h5>
+                State: <script> document.write(sessionStorage.getItem("state"))</script> 
+            </h5>
+        </div>
+        <div class="col-md-3">
+            <h5>
+                Zip Code: <script> document.write(sessionStorage.getItem("zip"))</script> 
+            </h5>
+        </div>
+    </div>
+    <br><hr>
+    <div class="row mb-3">
+        <div class="col-md-5"></div>
+            <h5>
+                Education Leve: <script> document.write(sessionStorage.getItem("educationLevel"))</script> 
+            </h5>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-5"></div>
+            <h5>
+                Income (yearly): <script> document.write(sessionStorage.getItem("yearly_income"));</script> 
+            </h5>
+    </div>
+    <div class="row mb-3 ">
+        <div class="col-md-5"></div>
+            <h5>
+                Phone: <script> document.write(sessionStorage.getItem("phone"))</script> 
+            </h5>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-5"></div>
+            <h5>
+                Email: <script> document.write(sessionStorage.getItem("email"))</script>
+            </h5>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-5"></div>
+            <h5>
+                Password: <script> document.write(sessionStorage.getItem("password"))</script>
+            </h5>
+    </div>
+    <div class="row">
+        <div id="map"></div>
+        <script>
+            var map;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById("map"), {
+                    center: { lat: -34.397, lng: 150.644 },
+                    zoom: 8
+                });
+                var geocoder = new google.maps.Geocoder();
+                geocodeAddress(geocoder, map);
+            }
+            function geocodeAddress(geocoder, resultsMap) {
+        
+              var address = sessionStorage.getItem("address");
+                 geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSLN6pSYjkL8_j2MyWi5mx2frtbSqnr8M&callback=initMap"></script>
+    </div>
+</body>
 </html>
